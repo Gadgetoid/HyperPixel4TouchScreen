@@ -4,12 +4,24 @@
 
 ### Users
 
-Install from the .deb file available in releases:
+Install the alternate touch driver from the .deb file available in releases:
 
 ```
+wget https://github.com/pimoroni/HyperPixel4TouchScreen/releases/download/v1.0/hyperpixel4-goodix-dkms_1.0_all.deb
+sudo apt install dkms raspberrypi-kernel-headers
 sudo dpkg -i hyperpixel4-goodix-dkms_1.0_all.deb
 ```
-HyperPixel4's touchscreen can be rotated with the following options:
+
+Then install the modified dtoverlay from this repository:
+
+```
+git clone https://github.com/pimoroni/HyperPixel4TouchScreen
+cd HyperPixel4TouchScreen/driver
+make build
+sudo make install
+```
+
+HyperPixel4's touchscreen can be rotated with the following options in `/boot/config.txt`:
 
 * `dtoverlay=hyperpixel4:rotate_0` - Portrait, USB ports on top
 * `dtoverlay=hyperpixel4:rotate_1` - Landscape, USB ports on left
