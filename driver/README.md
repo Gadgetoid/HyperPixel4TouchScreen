@@ -12,7 +12,7 @@ sudo apt install dkms raspberrypi-kernel-headers
 sudo dpkg -i hyperpixel4-goodix-dkms_1.0_all.deb
 ```
 
-Then install the modified dtoverlay from this repository:
+You *must* also install the modified `hyperpixel4.dtbo` dtoverlay from this repository:
 
 ```
 git clone https://github.com/pimoroni/HyperPixel4TouchScreen
